@@ -1,6 +1,14 @@
 # Predicting Toronto Public Library Visitations: Socioeconomic and Immigrant Factors
 
-**Tools:** R · Tidyverse · ggplot2 · estimatr · texreg  
+## Tools,Packages & Methods
+
+- **R:** Statistical analysis and data processing.
+- **Tidyverse / dplyr:** Data cleaning, transformation, aggregation, and dataset joins.
+- **readxl:** Importing demographic data from Excel.
+- **ggplot2:** Exploratory data visualization and regression coefficient plots.
+- **estimatr:** Robust linear regression using `lm_robust()`.
+- **texreg:** Regression table generation and reporting.
+  
 **Methods:** Data Cleaning · Exploratory Data Analysis · Robust Linear Regression · Statistical Inference
 
 ## Overview
@@ -126,6 +134,36 @@ Significance notation: *** \(p < 0.001\); ** \(p < 0.01\); * \(p < 0.05\).
 
 ## Key Findings
 
-- **Immigrant population share was not statistically significant.** The final model did not find sufficient evidence of an independent association between immigrant share and neighbourhood-level library visit volume after accounting for the included controls.
-- **Low-income rate was positively associated with visit volume.** Its coefficient was 0.05 and statistically significant at the 5% level, holding the other included variables constant.
-- **The proportion
+- **Immigrant population share was not statistically significant.** After controlling for low-income rate, total population, and the proportion of children aged 0–14, the model found no statistically significant association between neighbourhood immigrant share and library visit volume.
+- **Low-income rate was positively associated with library visits.** The coefficient was 0.05 and statistically significant at the 5% level, holding the other variables constant.
+- **The proportion of children aged 0–14 was not statistically significant.** Although the estimated coefficient was negative, the model did not provide sufficient evidence of an association.
+- **Total population was statistically significant.** Its coefficient was positive but rounded to 0.00 in the reported results; the unrounded estimate is needed to assess its magnitude.
+- **The model had modest explanatory power.** The model achieved an \(R^2\) of 0.18 and an adjusted \(R^2\) of 0.14, indicating that it explained a limited proportion of the variation in log-transformed library visits.
+
+Overall, the findings did not support the initial hypothesis that neighbourhood immigrant population share independently predicts library visitation after accounting for the included demographic controls.
+
+These results reflect **statistical associations, not causal relationships**. In particular, the positive association between low-income rate and total visit volume does not establish that lower-income residents visit libraries more frequently on a per-person basis.
+
+## Limitations
+
+- **Ecological inference:** Neighbourhood-level demographic data cannot establish the characteristics or behaviour of individual library visitors.
+- **Temporal mismatch:** Library visitation data are from 2023, whereas demographic data are from 2021.
+- **Omitted variables:** Branch size, operating hours, transit accessibility, service availability, and proximity to other branches may influence visitation.
+- **Geographic coverage:** The analysis is limited to neighbourhoods represented in the merged dataset, excluding areas without a matched library branch.
+- **Cross-sectional design:** Using one year of visitation data limits the ability to assess long-term trends or establish causal relationships.
+- **Model specification:** The selected predictors may not capture all relevant relationships. Additional diagnostic testing and sensitivity analyses could help evaluate model assumptions and the robustness of the findings.
+
+## Future Directions
+
+Potential extensions to this analysis include:
+
+- Incorporating multiple years of visitation data to examine changes in library usage over time.
+- Adding branch-level operational and geographic variables, such as opening hours, facility size, and service availability.
+- Investigating transit accessibility and proximity to library services.
+- Comparing alternative outcome measures, including population-adjusted visitation metrics.
+- Conducting formal model diagnostics, multicollinearity checks, and sensitivity analyses.
+- Exploring whether demographic relationships vary across neighbourhoods or library branch types.
+
+## Project Context
+
+Developed as part of the University of Toronto's IRE379 Research and Data course, this project demonstrates an end-to-end analytical workflow involving public dataset integration, variable engineering, exploratory data analysis, robust regression modeling, statistical inference, and critical evaluation of findings.
