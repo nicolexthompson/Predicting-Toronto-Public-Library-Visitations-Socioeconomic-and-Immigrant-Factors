@@ -42,8 +42,10 @@ The datasets were cleaned and integrated to create a neighbourhood-level analyti
 Used histograms to examine variable distributions and identify skewness in neighbourhood-level visit counts. Applied a logarithmic transformation to the visitation outcome before regression modeling.
 
 ### 3. Regression Modeling
-
 Estimated a series of robust linear regression models using `lm_robust()` from the `estimatr` package.
+
+
+![Equation](https://latex.codecogs.com/svg.latex?\ln(\text{log\_visits}_i)%20=%20\beta_0%20+%20\beta_1\text{immigrant\_rate}_i%20+%20\beta_2\text{low\_income\_rate}_i%20+%20\beta_3\text{total\_pop}_i%20+%20\beta_4\text{pct\_0to14}_i)
 
 - **Bivariate regression:** Examined the initial relationship between immigrant population share and log-transformed library visits.
 - **Potential confounder screening:** Examined associations between immigrant share, library visits, and candidate demographic controls.
