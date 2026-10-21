@@ -11,7 +11,7 @@ Using public library visitation records, branch information, and 2021 neighbourh
 
 The analysis evaluates an initial hypothesis that neighbourhoods with higher immigrant population shares would have higher library visit volumes, while exploring how other neighbourhood characteristics relate to visitation.
 
-**Result:** The relationship between neighbourhood immigrant population share and library visitation was **not statistically significant** in the final multiple regression model (\(\beta = -0.01\), \(p > 0.05\)), controlling for low-income rate, total population, and the proportion of children aged 0–14.
+**Result:** The relationship between neighbourhood immigrant population share and library visitation was **not statistically significant** in the final multiple regression model ![Equation](https://latex.codecogs.com/svg.latex?\beta%20=%20-0.01,%20\qquad%20p%20%3E%200.05), controlling for low-income rate, total population, and the proportion of children aged 0–14.
 
 ## Key Learnings & What Could Have Been Improved
 
